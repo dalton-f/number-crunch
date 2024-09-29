@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="antialiased" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,5 +9,58 @@
 
     <script src="/dist/js/app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <main class="grid h-screen select-none p-10">
+      <header
+        class="col-span-full row-span-full hidden justify-between text-2xl"
+        aria-hidden="true"
+        id="header"
+      >
+        <p id="timer">00:00:00</p>
+        <progress value="1" max="20" id="progress">1/20</progress>
+      </header>
+
+      <section class="col-span-full row-span-full grid place-items-center">
+        <div class="flex flex-col items-center gap-10" id="menu">
+          <h1 class="text-5xl font-semibold">number crunch</h1>
+
+          <div class="grid grid-cols-2 gap-4 text-xl">
+            <button
+              class="rounded-full border border-black px-6 py-2"
+              data-gamemode="clock"
+            >
+              against the clock
+            </button>
+            <!-- <button
+              class="rounded-full border border-black px-6 py-2"
+              data-gamemode="limitless"
+            >
+              limitless
+            </button> -->
+          </div>
+        </div>
+
+        <div
+          class="hidden flex-col items-center gap-6"
+          id="questions"
+          aria-hidden="true"
+        >
+          <h1 class="text-5xl font-semibold">
+            question <span id="question-number"></span>
+          </h1>
+
+          <p class="text-3xl" id="question"></p>
+
+          <input
+            id="answer"
+            type="number"
+            class="border border-black px-4 py-2 text-xl"
+            required
+          />
+
+          <p class="text-2xl">press enter to submit</p>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
